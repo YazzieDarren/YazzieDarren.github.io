@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</title>
+    <style>
+            html{
+                background: url("background.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                display: table;
+        margin: auto;
+            }
+        body {
+    display: table-cell;
+    vertical-align: middle;
+}
+        html, body {
+    height: 100%;
+}
+        </style> 
+<body>
+
+   <div id="finalResult"></div>
+    <script>
+/****************Local Storage API Example**************/
+if (typeof(Storage) !== "undefined") {
+  
+    localStorage.setItem("assignment", "This is my Topic 5 example of Storing and Retrieving Simple Data");
+   
+    document.getElementById("finalResult").innerHTML = localStorage.getItem("assignment");
+} else {
+    document.getElementById("finalResult").innerHTML = "Sorry not supported by browser.";
+}
+  
+        </script>
+
+<script>
+/****************Storing and Retrieving Simple Data, Arrays, Associative Arrays, Objects Example**************/  
+var states = ["Arizona", "Alaska", "New York", 
+"Utah", "Texas", "Florida"];
+ 
+
+localStorage.setItem("favoriteStates", JSON.stringify(states));
+ 
+
+var retrievedData = localStorage.getItem("favoriteStates");
+var statesTwo = JSON.parse(retrievedData);
+ 
+
+alert(statesTwo.length);
+
+
+</script>
+    </body>
+</head>
+
+<br><br>
+
+ <a href="index.html">Home</a>
+
+
+</html>

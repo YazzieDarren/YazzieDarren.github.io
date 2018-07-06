@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1">
+     
+
+
+
+        <image src="BYUILogo.png" onload="loadImage()" width="100" height="100"></image><br><br>
+        
+        <p>Click the button to display the date.</p>
+        
+        <button onclick="displayDate()">The time is?</button>
+                <style>
+            html{
+                background: url("background.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+        
+<script>
+function displayDate() {
+    document.getElementById("date").innerHTML = Date();
+}
+</script>
+
+<p id="date"></p>  
+    </head>
+
+    <body onload="myOnLoad()">
+    
+    
+<script>
+function myOnLoad() {
+    alert("Page is loaded");
+}
+    
+    function loadImage() {
+    alert("Image is loaded");
+}
+    
+</script>
+        
+    <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+<p id="demo"></p>
+        <button onclick="this.innerHTML=Date()">The time is?</button>
+        
+<p><strong>Note:</strong>This is example code for mobile devices.</p>    
+
+<p><strong>Example code for onTouchBegin.</strong></p> 
+<p>document.getElementById("onTouchStart").ontouchstart = myFunction;<br>
+
+function myFunction() {
+        document.getElementById("example").innerHTML = "Hello World";</p>
+
+<p><strong>Example code for onTouchEnd</strong></p>   <br>
+ontouchend=myFunction()
+id="example2">
+
+
+function myFunction() {
+  document.getElementById("example2").innerHTML = "Hello World";
+}
+
+<p><strong>Example code for onTouchMove</strong></p>   <br>
+ontouchmove="myFunction(event)"
+
+
+
+function myFunction(event) {
+  var x = event.touches[0].clientX;
+  var y = event.touches[0].clientY;
+  document.getElementById("example4").innerHTML = x + ", " + y;
+}
+
+<p><strong>Example code for onTouchCancel</strong></p>   <br>
+ontouchcancel="myFunction()"
+
+ id="example78"></p>
+
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Touch Cancelled";
+
+  </body>  
+<br><br>
+<a href="index.html">Home</a>
+</html>

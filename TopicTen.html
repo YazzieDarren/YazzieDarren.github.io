@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>HTML5 Tags - Video, Audio, and Canvas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1">
+               <style>
+            html{
+                background: url("background.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+    
+       
+    </head>
+
+    <body>
+     <video width="320" height="240" controls>
+  <source src="cat.mp4" type="video/mp4">
+  <source src="cat.ogg" type="video/ogg">
+
+</video>
+
+<p>The video tag example.</p>
+        <canvas id="canvas"></canvas>
+            <script>
+           var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+ctx.fillStyle = 'purple';
+ctx.fillRect(50, 50, 200, 200); 
+                
+                
+
+
+        </script>      <br><br><br><br>
+ <p>The canvas tag example.</p>       
+        
+                        <audio controls>
+  <source src="audioExample.ogg" type="audio/ogg">
+  <source src="audioExample.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<p>Audio tag example.</p>
+  </body>  
+    <br><br><br><br>
+    <a href="index.html">Home</a>
+</html>

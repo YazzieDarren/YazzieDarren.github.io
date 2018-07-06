@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    <title>Using XMLHTTPRequest to Consume a JSON Web Service</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1">
+        <script src="TopicFour.js"></script>
+    <style>
+            html{
+                background: url("background.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                    display: table;
+    margin: auto;
+            }
+        html, body {
+    height: 100%;
+}
+
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+        
+        </style> 
+        
+<p id="consumeJSON"></p>
+
+<script>
+
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myText = JSON.parse(this.responseText);
+        document.getElementById("consumeJSON").innerHTML = myText.name;
+    }
+};
+request.open("GET", "TopicFour.txt", true);
+request.send();
+
+</script>
+
+<p>Please <a href="TopicFour.txt" target="_blank">click here!</a></p>
+</head>
+<a href="index.html">Home</a>
+</html>
+
+

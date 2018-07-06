@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    <title>Object Creation Functions, Inheritance, Properties, Methods, Instantiation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1">
+         <link rel="stylesheet" href="stylesheets/topic2.css" media="screen">
+
+      <style>
+            html{
+                background: url("background.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style> 
+        </head>
+    <body>
+        
+      
+<p id="objects"></p>
+
+<script>
+/*****Object Creation Functions Example*****/ 
+function Person(first, profession, age, nationality) {
+    this.fullName = first;
+    this.profession = profession;
+    this.age = age;
+    this.nationality = nationality;
+}
+
+var myFather = new Person("Arnold Schwarzenegger", "Doctor", 10, "Filipino");
+var myMother = new Person("Halle erry", "Lawyer", 12, "American");
+
+document.getElementById("objects").innerHTML =
+"My father is " + myFather.fullName + ". My mother is " + myMother.nationality; 
+    
+    
+  
+    
+        </script>
+        
+        
+
+<p id="properties"></p>
+
+
+        <script>
+
+/*****Object Properties Example*****/ 
+var person = {
+    fullName:"Darren Yazzie",
+    profession:"Pro Basketball player",
+    jerseyNumber: 22
+};
+document.getElementById("properties").innerHTML =
+person.fullName + " is a " + person.profession + " and his jersey number is " + person.jerseyNumber + ".";
+    
+    
+        </script>
+        
+        
+<p id="methods"></p>
+
+<script>
+/***************Methods Example***************/
+var person = {
+    state: "Arizona",
+    home : " my home",
+    rank       : 1,
+    information : function() {
+       return this.state + " is " + this.rank;
+    }
+};
+
+// Display data from the object:
+document.getElementById("methods").innerHTML = person.information();
+</script>
+        
+        
+
+        <script>
+            
+/*****Instantiation and Inheritance Example*****/ 
+var firstPerson = function() {
+this.name = "First Person";
+}
+
+firstPerson.prototype.print = function() {
+    console.log(this.name);
+}
+
+var a = new firstPerson();
+
+a.print();
+            
+          
+var inheritanceExample = function (child, parent) {
+    child.prototype = Object.create(parent.prototype);
+};            
+            
+var secondPerson = function() {
+    this.name = "Second Person";
+    this.surname = "I'm the child";
+}
+
+inheritanceExample(secondPerson, firstPerson);
+            
+var b = new secondPerson();
+b.print();
+           
+    firstPerson.prototype.print = function() {
+    secondPerson.prototype.print.call(this);
+    console.log(this.surname);
+}
+            
+            var thirdPerson = function () {
+    this.name = "Third Person";
+    this.surname = "I'm the grandchild";
+}
+
+inheritanceExample(thirdPerson, secondPerson);
+
+thirdPerson.prototype.foo = function() {
+    
+}
+
+thirdPerson.prototype.print = function () {
+    secondPerson.prototype.print.call(this);
+    console.log("Sounds like this is working!");
+}
+
+var c = new thirdPerson();
+c.print();
+        </script>
+        </body>
+<a href="index.html">Home</a>
+</html>

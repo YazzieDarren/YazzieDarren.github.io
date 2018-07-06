@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1">
+        <link rel="stylesheet" href="stylesheets/topicOne.css" media="screen">
+        <script type="text/javascript">
+            
+/*****For Loop Example*****/        
+function forLoop()
+{
+    var one = "";
+    var two = 2;
+    for (var i = 0; i < two; i++)
+    {
+        var random = Math.floor((Math.random() * 100) + 1);
+        if (i == 2)
+        {
+        one += random;
+        }
+        else
+        {
+        one += random + " ";
+        }
+        document.getElementById('forLoop').innerHTML= one;
+    }
+
+/*****While Loop Example*****/
+}
+function whileLoop()
+    {
+        var text = "";
+        var number = 0;
+        while (number < 25)
+            {
+                text += number + 1 + ", "; number++;
+            }
+        document.getElementById('whileLoop').innerHTML = text;
+  }
+
+/*****Do/While Statement Example*****/
+function doWhile()
+{
+    var counter = "";
+    var number = 1;
+      do  {
+            counter += "<br>Your position: " + number; number++;
+        }
+    while (number <3 + 1)
+        document.getElementById('doWhile').innerHTML = counter;
+}
+      
+/*****IF Statement Example*****/
+function calculateGrade()
+            {
+                var gradePercentage = document.getElementById('grdPer').value;
+                var grade = endResult(gradePercentage);
+                document.getElementById('gradeChart').innerHTML = grade;
+            }
+function endResult(result)
+{
+    var gradeChart = "";
+    if (result >= 90 && result <= 100)
+        {
+        gradeChart = "A";
+        }
+    else if (result >= 80 && result <= 89)
+        {   
+        gradeChart = "B";
+        }
+     else if (result >= 70 && result <= 79)
+        {
+        gradeChart = "C";
+        }
+     else if (result >= 60 && result <= 69)
+        {
+        gradeChart = "D";
+        }   
+     else
+        {
+        gradeChart = "F";
+        }
+    return gradeChart;
+}
+function getGrade(){
+        document.getElementById('grdPer').value = "";
+        document.getElementById('gradeChart').innerHTML = "";
+            }
+            
+/*****Variables and Parameters Example*****/
+function tempConverter(temp)
+            {
+            var degree;
+            if (temp == 'Cel')
+                {
+                    temperature = document.getElementById('cel').value * 9 / 5 + 32;
+                    document.getElementById('fah').value = Math.round(temperature);
+                }
+                else
+                    {
+                        temperature = (document.getElementsById('fah').value - 32) * 5 / 9;
+                        document.getElementById('cel').value = Math.round(temperature);
+                    }
+                }
+             
+/*****Arrays and Associative Arrays Statement Example*****/
+var month = new Array();
+var day = new Array();
+var year = new Array();
+            
+function array()
+{
+    var inputOne = document.getElementById('inputOne').value;
+    var inputTwo = document.getElementById('inputTwo').value;
+    var inputThree = document.getElementById('inputThree').value;
+
+    month.push(inputOne);
+    document.getElementById("inputOne").value = " ";
+    day.push(inputTwo);
+    document.getElementById("inputTwo").value = " ";
+    year.push(inputThree);
+    document.getElementById("inputThree").value = " ";
+  
+    document.getElementById("array1").innerHTML = month + " ";
+    document.getElementById("array2").innerHTML = day + " ";
+    document.getElementById("array3").innerHTML = year + " ";
+   
+}
+            
+function resetArray()
+{
+    month = [];
+    day = [];
+    year = [];
+  
+    document.getElementById("array1").innerHTML = month;
+    document.getElementById("array2").innerHTML = day;
+    document.getElementById("array").innerHTML = year;
+   
+            
+}
+            
+            
+    </script>      
+       
+    </head>
+
+    <body>
+                <header>Topic 1</header>
+
+    
+    
+<div class="main"></div>
+    
+<!--For Loop Example-->
+    <div class="forLoop">
+        <h2>For Loop example:</h2>
+        <p>The button below displays two random numbers</p>
+        <button type="button" onclick="forLoop()">Press Here!</button><br>
+        <div id="forLoop"></div>
+    </div>
+
+<!--While Loop Example-->   
+    <div class="whileLoop">
+        <h2>While Loop example:</h2>
+        <p>Button displays numbers 1 to 25</p>
+        <button type="button" onclick="whileLoop()">Press Here!</button><br>
+        <div id="whileLoop"></div>
+    </div>  
+
+<!--Do/While Loop Example-->
+    <div class="doWhile">
+        <h2>Do/While Loop example:</h2>
+        <p>Displays your position:</p>
+        <button type="button" onclick="doWhile()">Press Here!</button><br>
+        <div id="doWhile"></div>
+    </div> 
+
+    
+<!--If Statement Example-->
+    <div class="endResult">
+        <h2>If Statement example:</h2>
+        <p>Enter grade percentage:</p>
+        <input type="text" id="grdPer" onclick="calculateGrade();"><br>
+        <button type="button" onclick="calculateGrade();">Press Here!</button><br>
+        <button type="button" onclick="getGrade();">Clear</button><br>
+        <div id="gradeChart"></div>
+    </div> 
+
+<!--Variables and Parameters Example--> 
+    <div class="varparam">
+        <h2>Variables and Parameters example:</h2>
+        <p>Convert Celsius to Fahrenheit or Fahrenheit to Celsius:</p>
+        <input type="input" id="cel"><br>
+        <button type="button" onclick="tempConverter('Cel');">Degrees in Celsius</button><br>
+        <input type="input" id="fah"><br>
+        <button type="button" onclick="tempConverter('Fah');">Degrees in Fahrenheit</button><br>
+    </div>
+ 
+<!--Arrays and Associative Arrays Example-->   
+    <div class="array">
+        <h2>Arrays and Associative Arrays example:</h2>
+        <p>Enter your birthdate by month, day, and year:</p>
+        Month:<input type="input" id="inputOne"><br>
+        Day:<input type="input" id="inputTwo"><br>
+        Year:<input type="input" id="inputThree"><br>
+        <button type="button" onclick="array();">Display b-day</button>
+        <button type="button" onclick="resetArray();">Reset</button><br>
+        <div id="array1"></div>
+        <div id="array2"></div>
+        <div id="array3"></div>        
+    </div> 
+  </body>  
+    <br><br>
+    <a href="index.html">Home</a>
+</html>

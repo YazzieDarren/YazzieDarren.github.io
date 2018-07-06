@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal=1">
+        <style>
+                   
+            html{
+                background: url("background.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        
+            div#box1 {
+                background: pink;
+                width: 400px;
+                height: 200px;
+                
+                
+            }
+            
+             div#box2 {
+                background: #3f7948;
+                width: 400px;
+                height: 200px;
+                overflow: hidden;
+            }
+            
+              div#box3 {
+                background: #6355ac;
+                width: 400px;
+                height: 200px;
+                overflow: hidden;
+            }
+            
+                          div#box4 {
+                background: #b29a34;
+                width: 400px;
+                height: 200px;
+                position: absolute;              
+                              top: 100px;
+                              right: -400px;
+                
+            }
+            
+        </style>
+        <script>
+            
+function backGround(element1, color1)
+            {
+                
+            var elem = document.getElementById(element1);
+               elem.style.transition = "background 1.0s linear 0s"
+                elem.style.background = color1;
+            }
+
+  function fadeOut(element2)
+            {
+                
+            var elem = document.getElementById(element2);
+               elem.style.transition = "opacity 2.0s linear 0s"
+                elem.style.opacity = 0;
+            }
+        function fadeIn(element3)
+            {
+                
+            var elem = document.getElementById(element3);
+               elem.style.transition = "opacity 2.0s linear 0s"
+                elem.style.opacity = 1;
+            }
+            
+              function slideUp(element4)
+            {
+                
+            var elem = document.getElementById(element4);
+               elem.style.transition = "height 2.0s linear 0s"
+                elem.style.height = "200px";
+            }
+        function slideDown(element5)
+            {
+                
+            var elem = document.getElementById(element5);
+               elem.style.transition = "height 2.0s linear 0s"
+                elem.style.height = "0px";
+            }
+            
+            function slideIn(element6)
+            {
+                
+            var elem = document.getElementById(element6);
+               elem.style.transition = "right 1.0s ease-in 0s"
+                elem.style.right = "0px";
+            }
+        function slideOut(element7)
+            {
+                
+            var elem = document.getElementById(element7);
+               elem.style.transition = "right 1.0s ease-out 0s"
+                elem.style.right = "-400px";
+            }
+        </script>      
+       
+    </head>
+
+    <body>
+                <header>Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</header><br>
+        <div id="box1">By clicking the buttons below, you can change the colors of the box.</div><br>
+        <button onclick="backGround('box1', 'orange');">Orange</button>
+        <button onclick="backGround('box1', 'purple');">Purple</button>
+        <button onclick="backGround('box1', '#F0F');">Original Color</button><br><br>
+
+        
+        <div id="box2">Fade Out</div><br>
+        <button onclick="fadeOut('box2');">Fade Out</button>
+        <button onclick="fadeIn('box2');">Fade In</button><br><br>
+
+        <div id="box4">Fade Out</div><br>
+        <button onmouseover="slideIn('box4');">Slide In, No need to click</button>
+        <button onmouseover="slideOut('box4');">Slide Out</button><br><br>
+
+    
+  </body>  
+    <a href="index.html">Home</a>
+</html>

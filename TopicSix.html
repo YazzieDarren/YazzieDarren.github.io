@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc</title>
+     <style>
+            html{
+                background: url("background.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                 display: table;
+                margin: auto;
+            }
+         html, body {
+    height: 100%;
+}
+head {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+         h2{
+             color: aqua;
+             text-shadow: 2px 2px 8px #FF0000;
+         }
+         p{
+             color: darkblue;
+         }
+
+    
+        </style>    
+
+    <script>
+/****************insertBefore Example**************/  
+        /****************createElement, appendChild Example**************/     
+    function domFunction(){
+    var funct = document.createElement("element");
+    var text = document.createTextNode("Yay, it worked!");
+    funct.appendChild(text);
+    document.body.appendChild(funct);
+    
+}
+  
+function insertFunction() {
+    var newItem = document.createElement("LI");
+    var textnode = document.createTextNode("Last");
+    newItem.appendChild(textnode);
+
+    var list = document.getElementById("myList");
+    list.insertBefore(newItem, list.childNodes[0]);
+}
+    
+
+
+    
+/****************removeChild Example**************/ 
+
+function removeFunction() {
+    var list = document.getElementById("remove");
+    list.removeChild(list.childNodes[0]);
+}
+
+</script>
+    
+    
+    </head>
+<body>
+     
+<div class="removeFunction">
+     <h2>Remove Element Example</h2>
+     
+        <ul id="remove"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+
+       <button onclick="removeFunction()">Click hereto remove!</button>   
+</div>
+    
+<div class="insertFunction">
+        <h2>InsertBefore Example:</h2>
+        <button onclick="insertFunction()">Click here to insert!</button>
+        <div id="insertFunction"/>
+      <ul id="myList">
+                <li>First</li>
+                <li>Second</li>
+                <li>Third</li>
+            </ul>
+</div>
+    
+<div class="domFunction">
+               <h2>Create Element Example</h2>
+            
+            <button onclick="domFunction()">Click here!</button>
+          
+            <div id="domFunction"/>      
+</div>
+
+
+   
+
+    
+
+
+
+
+
+
+
+    </body>
+
+<br><br>
+
+<a href="index.html">Home</a>
+ 
+
+
+</html>

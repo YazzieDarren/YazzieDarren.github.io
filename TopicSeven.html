@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Manipulating CSS Class Properties Using JavaScrip</title>
+           <style>
+                      html{
+                background: url("background.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                 display: table;
+                margin: auto;
+            }
+         html, body {
+    height: 100%;
+}
+head {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+         h2{
+             color: aqua;
+             text-shadow: 2px 2px 8px #FF0000;
+         }
+         p{
+             color: #07640e;
+         }
+        </style> 
+    
+</head>
+    <body>
+       
+<p id="p1">This is  my example of Manipulating CSS properties</p>
+<button type="button" onclick="cssManipulation()">Click me to change text color</button><br>
+        <p id="p2">Visible and Invisible</p>
+        <button type="button" onclick="visible()">Visible</button><br>
+        <button type="button" onclick="invisible()">Invisible</button>
+        <script>
+        
+/****************insertBefore Example**************/  
+
+function cssManipulation()
+{
+document.getElementById("p1").style.color="blue";
+document.getElementById("p1").style.fontFamily="georgia";
+document.getElementById("p1").style.fontSize= "larger";
+}
+
+function visible()
+{
+document.getElementById("p2").style.visibility="visible";
+    
+}
+function invisible()
+{
+document.getElementById("p2").style.visibility="hidden";
+}
+    
+        </script>
+
+    </body>
+    <br><br>
+<a href="index.html">Home</a>
+</html>
